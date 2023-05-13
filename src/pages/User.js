@@ -1,17 +1,18 @@
 import { Authenticator } from '@aws-amplify/ui-react';
-import UserEditPage from "./UserEditPage";
+import UserPage from "./UserPage";
 
-const UserEdit = () => {
+const User = () => {
     return (
         <Authenticator signUpAttributes={[
             'email',
             'nickname',
-            ]}>
+            ]} 
+        >
         {({ signOut, user }) => (
-            <UserEditPage />
+            <UserPage />
         )}
         </Authenticator>
     );
 }
 
-export default UserEdit;
+export default User;

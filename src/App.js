@@ -4,12 +4,15 @@ import '@aws-amplify/ui-react/styles.css';
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import UserEdit from "./pages/UserEdit";
+import Layout from "./pages/Layout";
+import User from "./pages/User";
+import MyPage from "./pages/MyPage";
 
 import { Authenticator, translations } from '@aws-amplify/ui-react';
 
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
-
+/*
 // https://ui.docs.amplify.aws/react/connected-components/authenticator/customization#internationalization-i18n
 I18n.putVocabularies(translations);
 I18n.setLanguage('ja');
@@ -34,15 +37,18 @@ I18n.putVocabularies({
     'Cannot reset password for the user as there is no registered/verified email or phone_number': '会員登録されていないためパスワードリセットできません',
   },
 });
-
+*/
 function App() {
   return (
     <Authenticator.Provider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/user_edit" element={<UserEdit />} />
+          <Route path="/" element={<Layout />} >
+            <Route path="/" element={<MyPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/user" element={<User />} />
+            <Route path="/user_edit" element={<UserEdit />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </Authenticator.Provider>
