@@ -1,8 +1,7 @@
-//import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react';
-import { Authenticator } from '@aws-amplify/ui-react';
-//import { useTheme, View, Text, Heading, Button } from '@aws-amplify/ui-react';
+import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react';
+import { useTheme, View, Text, Heading, Button } from '@aws-amplify/ui-react';
 import MyPage from "./MyPage";
-/*
+
 // https://ui.docs.amplify.aws/react/connected-components/authenticator/customization
 const components = {
   // 共通フッター
@@ -102,14 +101,14 @@ const components = {
     },
   },
 };
-*/
+
 const LoginPage = () => {
     console.log("LoginPage.js start...");
     return (
         <Authenticator signUpAttributes={[
             'email',
             'nickname',
-            ]} 
+            ]} components={components}
         >
         {({ signOut, user }) => (
             <MyPage />
@@ -119,5 +118,3 @@ const LoginPage = () => {
 }
 
 export default LoginPage;
-
-//components={components}

@@ -12,7 +12,7 @@ import { Authenticator, translations } from '@aws-amplify/ui-react';
 
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
-/*
+
 // https://ui.docs.amplify.aws/react/connected-components/authenticator/customization#internationalization-i18n
 I18n.putVocabularies(translations);
 I18n.setLanguage('ja');
@@ -37,7 +37,7 @@ I18n.putVocabularies({
     'Cannot reset password for the user as there is no registered/verified email or phone_number': '会員登録されていないためパスワードリセットできません',
   },
 });
-*/
+
 function App() {
   return (
     <Authenticator.Provider>
